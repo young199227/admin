@@ -1,6 +1,7 @@
 export interface LoginRequestData {
   account: string
   password: string
+  token?: string // 这里添加 token 属性
 }
 
 export interface token {
@@ -29,18 +30,20 @@ export interface GetUserInfoData {
   message: string
 }
 
-export type UserData = {
+export interface GetUserLoginData {
   type: number
-  data: {
-    account: string
-    name: string | null
-    phone: string | null
-    email: string | null
-    ip: string
-    created_at: string
-    updated_at: string
-  }
+  account: string
   message: string
+}
+
+export type UserData = {
+  account: string
+  name: string | null
+  phone: string | null
+  email: string | null
+  ip: string
+  created_at: string
+  updated_at: string
 }
 
 export type getTokenApi = ApiResponseData<string>

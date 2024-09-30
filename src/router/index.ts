@@ -62,34 +62,21 @@ export const constantRoutes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: "/unocss",
-    component: Layouts,
-    redirect: "/unocss/index",
-    children: [
-      {
-        path: "index",
-        component: () => import("@/views/unocss/index.vue"),
-        name: "UnoCSS",
-        meta: {
-          title: "UnoCSS",
-          svgIcon: "unocss"
-        }
-      }
-    ]
-  },
-  {
-    path: "/link",
+    path: "/order",
+    redirect: "/table/element-plus",
+    name: "order",
     meta: {
-      title: "外链",
-      svgIcon: "link"
+      title: "訂單",
+      elIcon: "order"
     },
     children: [
       {
-        path: "https://juejin.cn/post/7089377403717287972",
-        component: () => {},
-        name: "Link1",
+        path: "訂單",
+        component: () => import("@/views/table/vxe-table/index.vue"),
+        name: "訂單",
         meta: {
-          title: "中文文档"
+          title: "訂單",
+          keepAlive: true
         }
       },
       {
@@ -108,25 +95,34 @@ export const constantRoutes: RouteRecordRaw[] = [
     redirect: "/table/element-plus",
     name: "Table",
     meta: {
-      title: "表格",
+      title: "產品",
       elIcon: "Grid"
     },
     children: [
       {
-        path: "element-plus",
-        component: () => import("@/views/table/element-plus/index.vue"),
-        name: "ElementPlus",
+        path: "產品種類",
+        component: () => import("@/views/table/product_type/index.vue"),
+        name: "產品種類",
         meta: {
-          title: "Element Plus",
+          title: "產品種類",
           keepAlive: true
         }
       },
       {
-        path: "vxe-table",
+        path: "產品類別",
         component: () => import("@/views/table/vxe-table/index.vue"),
-        name: "VxeTable",
+        name: "產品類別",
         meta: {
-          title: "Vxe Table",
+          title: "產品類別",
+          keepAlive: true
+        }
+      },
+      {
+        path: "產品",
+        component: () => import("@/views/table/vxe-table/index.vue"),
+        name: "產品",
+        meta: {
+          title: "產品",
           keepAlive: true
         }
       }
